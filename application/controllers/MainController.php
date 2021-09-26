@@ -8,11 +8,21 @@
     {
         public function indexAction()
         {
-            $result = $this->model->getNews();
-            $vars = [
-                'news' => $result,
-            ];
+            $this->view->render('Главная страница');
+        }
 
-            $this->view->render('Главная страница', $vars);
+        public function aboutAction()
+        {
+            $this->view->render('Обо мне');
+        }
+
+        public function contactAction()
+        {
+            $this->view->render('Контакты');
+        }
+
+        public function postAction()
+        {
+            $this->view->render('Пост');
         }
     }
