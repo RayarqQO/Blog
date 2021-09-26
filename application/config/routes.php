@@ -19,7 +19,9 @@
             'controller' => 'main',
             'action'     => 'post'
         ],
+
         // AdminController
+        
         'login'  => [
             'controller' => 'admin',
             'action'     => 'login'
