@@ -23,7 +23,7 @@
 
         public function editAction()
         {
-            $this->view->render('Редактировать');
+            $this->view->render('Редактировать пост');
         }
 
         public function deleteAction()
