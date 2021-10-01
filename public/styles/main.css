@@ -50,7 +50,7 @@ body{
     display: flex;
 }
 .image__item{
-    height: 220px;
+    height: 250px;
     width: 100%;
     background-image: url("/public/images/home-pg.png");
     background-size: cover;
