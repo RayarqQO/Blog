@@ -4,8 +4,15 @@
 
     use application\core\Controller;
 
-    class MainController extends Controller
+    class AdminController extends Controller
     {
+        public function __construct($route)
+        {
+            parent::__construct($route);
+            $this->view->layout = 'admin';
+            $_SESSION['admin'] = 0;
+        }
+
         public function loginAction()
         {
             $this->view->render('Вход');
