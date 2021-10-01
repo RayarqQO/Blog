@@ -8,14 +8,14 @@
 <form class="form__section" method="POST" action="/contact">
     <div class="message__section">
         <label for="msg">Message</label>
-        <textarea id="msg"></textarea>
+        <textarea id="msg" name="text"></textarea>
     </div>
     <div class="contact__section">
         <label for="name">Name</label>
-        <input type="text" id="name">
+        <input type="text" id="name" name="name">
 
         <label for="email">Email Address</label>
-        <input type="email" id="email"> 
+        <input type="email" id="email" name="email"> 
 
         <button type="submit">Submit</button>
     </div>
