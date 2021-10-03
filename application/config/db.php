@@ -1,8 +1,8 @@
 <?php
 
     return [
-        'host'      => 'localhost',
-        'dbname'    => 'framework_db',
-        'user'      => 'geass',
-        'password'  => 'touka123',
+        'host'      => '',
+        'dbname'    => '',
+        'user'      => '',
+        'password'  => '',
     ];
