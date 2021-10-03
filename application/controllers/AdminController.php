@@ -40,7 +40,7 @@ class AdminController extends Controller
     {
         if(!empty($_POST))
         {
-            if(!$this->model->postValidate($_POST))
+            if(!$this->model->postValidate($_POST, 'add'))
             {
                 $this->view->message('error', $this->model->error);
             }
@@ -53,7 +53,7 @@ class AdminController extends Controller
     {
         if(!empty($_POST))
         {
-            if(!$this->model->postValidate($_POST))
+            if(!$this->model->postValidate($_POST, 'edit'))
             {
                 $this->view->message('error', $this->model->error);
             }
