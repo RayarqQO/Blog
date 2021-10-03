@@ -34,14 +34,25 @@ class Admin extends Model
             return false;
         }
 
-        if($type == 'add' and empty($_FILES['img']['tmp_name']))
-        {
-            if(empty($_FILES['img']['tmp_name']))
-            {
-                $this->error = 'Добавьте изображение';
-                return false;
-            }
-        }
+        // if($type == 'add' and empty($_FILES['img']['tmp_name']))
+        // {
+        //     if(empty($_FILES['img']['tmp_name']))
+        //     {
+        //         $this->error = 'Добавьте изображение';
+        //         return false;
+        //     }
+        // }
         return true;
+    }
+
+    public function postAdd($post)
+    {
+        $params = [
+            'id' => null,
+            'name' => $post['name'],
+            'description' => $post['description'],
+            'text' => $post['text']
+        ];
+        $this->db->query('INSERT INTO posts VALUES (:id, :name, :description, :text)', $params);
     }
 }
