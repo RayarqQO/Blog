@@ -44,7 +44,8 @@ class AdminController extends Controller
             {
                 $this->view->message('error', $this->model->error);
             }
-            $this->view->message('success', 'ok');
+            $this->model->postAdd($_POST);
+            $this->view->message('Success', 'Ok');
         }
         $this->view->render('Добавить пост');
     }
