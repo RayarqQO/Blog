@@ -51,6 +51,14 @@ class AdminController extends Controller
 
     public function editAction()
     {
+        if(!empty($_POST))
+        {
+            if(!$this->model->postValidate($_POST))
+            {
+                $this->view->message('error', $this->model->error);
+            }
+            $this->view->message('success', 'ok');
+        }
         $this->view->render('Редактировать пост');
     }
 
