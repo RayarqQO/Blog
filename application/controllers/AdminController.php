@@ -38,6 +38,14 @@ class AdminController extends Controller
 
     public function addAction()
     {
+        if(!empty($_POST))
+        {
+            if(!$this->model->postValidate($_POST))
+            {
+                $this->view->message('error', $this->model->error);
+            }
+            $this->view->message('success', 'ok');
+        }
         $this->view->render('Добавить пост');
     }
 
