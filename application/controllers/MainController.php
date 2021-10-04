@@ -3,12 +3,18 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use application\lib\Pagination;
 
 class MainController extends Controller
 {
     public function indexAction()
     {
-        $this->view->render('Главная страница');
+        $pagination = new Pagination($this->route, $this->model->postsCount(), 1);
+        $vars = [
+            'pagination' => $pagination->get(),
+            'list' => $this->model->postsList($this->route),
+        ];
+        $this->view->render('Главная страница', $vars);
     }
 
     public function aboutAction()
