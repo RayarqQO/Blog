@@ -75,7 +75,10 @@ class AdminController extends Controller
             }
             $this->view->message('success', 'ok');
         }
-        $this->view->render('Редактировать пост');
+        $vars = [
+            'data' => $this->model->postData($this->route['id'])[0],
+        ];
+        $this->view->render('Редактировать пост', $vars);
     }
 
     public function deleteAction()
