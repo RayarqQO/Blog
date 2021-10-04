@@ -2,6 +2,7 @@
 namespace application\models;
 
 use application\core\Model;
+//use Imagick;
 
 class Admin extends Model
 {
