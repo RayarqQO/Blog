@@ -6,6 +6,10 @@
             'controller' => 'main',
             'action'     => 'index'
         ],
+        'main/index/{page:\d+}'  => [
+            'controller' => 'main',
+            'action'     => 'index'
+        ],
         
         'about'  => [
             'controller' => 'main',
