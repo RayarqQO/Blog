@@ -27,7 +27,7 @@ class MainController extends Controller
         if(!empty($_POST)){
             if(!$this->model->contactValidate($_POST))
             {
-                $this->view->message('erroe', $this->model->error);
+                $this->view->message('error', $this->model->error);
             }
             mail('gm8i5@wimsg.com', 'Сообщение из блога', $_POST['name'].','.$_POST['email'].','.$_POST['text']);
             $this->view->message('success', 'Сообщение отправлено администратору');
