@@ -34,14 +34,14 @@ class Admin extends Model
             return false;
         }
 
-        // if($type == 'add' and empty($_FILES['img']['tmp_name']))
-        // {
-        //     if(empty($_FILES['img']['tmp_name']))
-        //     {
-        //         $this->error = 'Добавьте изображение';
-        //         return false;
-        //     }
-        // }
+        if($type == 'add' and empty($_FILES['img']['tmp_name']))
+        {
+            if(empty($_FILES['img']['tmp_name']))
+            {
+                $this->error = 'Добавьте изображение';
+                return false;
+            }
+        }
         return true;
     }
 
@@ -54,5 +54,11 @@ class Admin extends Model
             'text' => $post['text']
         ];
         $this->db->query('INSERT INTO posts VALUES (:id, :name, :description, :text)', $params);
+        return $this->db->lastInsertId();
+    }
+
+    public function postUploadImage($path, $id)
+    {
+        move_uploaded_file($path, 'public/materials/'.$id.'.jpg');
     }
 }
