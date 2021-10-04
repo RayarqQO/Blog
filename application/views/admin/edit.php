@@ -5,18 +5,18 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-4">
-                        <form action="/admin/edit" method="post" >
+                        <form action="/admin/edit/<?php echo $data['id']?>" method="post" >
                             <div class="form-group">
                                 <label>Название</label>
-                                <input class="form-control" type="text" name="name">
+                                <input class="form-control" type="text" name="name" value="<?php echo htmlspecialchars($data['name'], ENT_QUOTES);?>">
                             </div>
                             <div class="form-group">
                                 <label>Описание</label>
-                                <input class="form-control" type="text" name="description">
+                                <input class="form-control" type="text" name="description" value="<?php echo htmlspecialchars($data['description'], ENT_QUOTES);?>">
                             </div>
                             <div class="form-group">
                                 <label>Текст</label>
-                                <textarea class="form-control" rows="3" name="text"></textarea>
+                                <textarea class="form-control" rows="3" name="text"><?php echo htmlspecialchars($data['text'], ENT_QUOTES) ;?></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Изображение</label>
