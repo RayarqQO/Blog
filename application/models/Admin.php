@@ -90,4 +90,11 @@ class Admin extends Model
         unlink('public/materials/'.$id.'.jpg');
     }
 
+    public function postData($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+        return $this->db->row('SELECT * FROM posts WHERE id = :id', $params);
+    }
 }
