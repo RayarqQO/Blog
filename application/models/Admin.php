@@ -57,6 +57,17 @@ class Admin extends Model
         return $this->db->lastInsertId();
     }
 
+    public function postEdit($post, $id)
+    {
+        $params = [
+            'id' => $id,
+            'name' => $post['name'],
+            'description' => $post['description'],
+            'text' => $post['text']
+        ];
+        $this->db->query('UPDATE posts SET name = :name, description = :description, text = :text WHERE id = :id', $params);
+    }
+
     public function postUploadImage($path, $id)
     {
         move_uploaded_file($path, 'public/materials/'.$id.'.jpg');
