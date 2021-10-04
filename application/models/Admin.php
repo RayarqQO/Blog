@@ -81,4 +81,13 @@ class Admin extends Model
         return $this->db->column('SELECT id FROM posts WHERE id = :id', $params);
     }
 
+    public function postDelete($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+        $this->db->query('DELETE FROM posts WHERE id = :id', $params);
+        unlink('public/materials/'.$id.'.jpg');
+    }
+
 }
