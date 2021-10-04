@@ -57,6 +57,10 @@ class AdminController extends Controller
 
     public function editAction()
     {
+        if(!$this->model->isPostExists($this->route['id']))
+        {
+            $this->view->errorCode(404);
+        }
         if(!empty($_POST))
         {
             if(!$this->model->postValidate($_POST, 'edit'))
