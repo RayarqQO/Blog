@@ -72,4 +72,13 @@ class Admin extends Model
     {
         move_uploaded_file($path, 'public/materials/'.$id.'.jpg');
     }
+
+    public function isPostExists($id)
+    {
+        $params = [
+            'id' => $id
+        ];
+        return $this->db->column('SELECT id FROM posts WHERE id = :id', $params);
+    }
+
 }
