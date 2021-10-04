@@ -35,4 +35,18 @@ class Main extends Model
         return $this->db->column('SELECT COUNT(id) FROM posts');
     }
 
+    public function postsList($route)
+    {
+        $max = 1;
+        if(isset($route['page'])){
+            $pag = $route['page'];
+        }else{
+            $pag = 1;
+        }
+        $params = [
+            'max' => $max,
+            'start' => (($pag)-1)*$max,
+        ];
+        return $this->db->row('SELECT * FROM posts ORDER BY id DESC LIMIT :start, :max', $params);
+    }
 }
