@@ -29,4 +29,10 @@ class Main extends Model
 
         return true;
     }
+
+    public function postsCount()
+    {
+        return $this->db->column('SELECT COUNT(id) FROM posts');
+    }
+
 }
