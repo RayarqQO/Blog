@@ -44,7 +44,12 @@ class AdminController extends Controller
             {
                 $this->view->message('error', $this->model->error);
             }
-            $this->model->postAdd($_POST);
+            $id = $this->model->postAdd($_POST);
+            if(!$id)
+            {
+                $this->view->message('Error', 'Error');
+            }
+            $this->model->postUploadImage($_FILES['img']['tmp_name'], $id);
             $this->view->message('Success', 'Ok');
         }
         $this->view->render('Добавить пост');
