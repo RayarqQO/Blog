@@ -67,6 +67,12 @@ class AdminController extends Controller
             {
                 $this->view->message('error', $this->model->error);
             }
+            $this->model->postEdit($_POST, $this->route['id']);
+            if ($_FILES['img']['tmp_name'])
+            {
+
+                $this->model->postUploadImage($_FILES['img']['tmp_name'], $this->route['id']);
+            }
             $this->view->message('success', 'ok');
         }
         $this->view->render('Редактировать пост');
