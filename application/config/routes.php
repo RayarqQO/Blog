@@ -23,6 +23,10 @@
             'controller' => 'main',
             'action'     => 'post'
         ],
+        'post' => [
+            'controller' => 'main',
+            'action'     => 'post'
+        ],
 
         // AdminController
         
@@ -45,6 +49,10 @@
         'admin/delete/{id:\d+}'  => [
             'controller' => 'admin',
             'action'     => 'delete'
+        ],
+        'admin/posts/{page:\d+}'  => [
+            'controller' => 'admin',
+            'action'     => 'posts'
         ],
         'admin/posts'  => [
             'controller' => 'admin',
