@@ -13,19 +13,19 @@
         <div class="header">
             <div class="header__section">
                 <div class="header__item headerlogo">
-                    <a href="#">Blog</a>
+                    <a href="/">Blog</a>
+                </div>
+<!--                <div class="header__item headerButton">-->
+<!--                    <a href="post">Posts</a>-->
+<!--                </div>-->
+                <div class="header__item headerButton">
+                    <a href="about">About me</a>
                 </div>
                 <div class="header__item headerButton">
-                    <a href="#">Posts</a>
-                </div>
-                <div class="header__item headerButton">
-                    <a href="#">About me</a>
-                </div>
-                <div class="header__item headerButton">
-                    <a href="#">Contacts</a>
+                    <a href="contact">Contacts</a>
                 </div>
                 <div class="header__item headerLogin">
-                    <a href="#"><i class="fas fa-sign-in-alt"></i></a>
+                    <a href="admin/login"><i class="fas fa-sign-in-alt"></i></a>
                 </div>  
             </div>
         </div>
