@@ -32,7 +32,7 @@ class Main extends Model
 
     public function postsList($route)
     {
-        $max = 1;
+        $max = 3;
         if(isset($route['page'])){
             $pag = $route['page'];
         }else{
